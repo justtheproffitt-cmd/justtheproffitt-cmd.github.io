@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Services — North Ridge Creative</title>
+  <meta name="description" content="Service detail page: design, fixes, full builds, maintenance."/>
+  <style>
+    :root{--bg:#071026; --accent:#6ee7b7; --muted:#9aa6b2; --card:#0b1220}
+    *{box-sizing:border-box} body{margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto; background:var(--bg); color:#e8f6f2}
+    a{color:var(--accent)}
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+    nav{display:flex; justify-content:space-between; align-items:center; padding:18px 0}
+    .navlinks a{margin-left:16px; color:var(--muted); text-decoration:none; font-weight:600}
+    header{padding:36px 0; display:flex; gap:24px; align-items:center}
+    header h1{margin:0; font-size:28px}
+    .badge{background:rgba(110,231,183,0.08); color:var(--accent); padding:6px 10px; border-radius:999px; font-weight:700; font-size:14px}
+    .grid{display:grid; grid-template-columns:2fr 1fr; gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px}
+    .service-list{display:grid; gap:14px}
+    .service-item{display:flex; gap:12px; align-items:flex-start}
+    .service-item svg{flex:0 0 48px; width:48px; height:48px; border-radius:10px}
+    .cta{margin-top:18px}
+    .btn{background:var(--accent); color:#023033; border:none; padding:10px 14px; border-radius:10px; font-weight:800; cursor:pointer}
+    .case-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px}
+    .case{background:#071422; padding:12px; border-radius:10px}
+    footer{margin-top:36px; color:var(--muted); padding:24px 0; border-top:1px solid rgba(255,255,255,0.02)}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} .case-grid{grid-template-columns:repeat(2,1fr)} .case-grid .case{min-height:120px} .navlinks{display:none} }
+    @media (max-width:600px){ .case-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <nav class="wrap">
+    <div style="font-weight:800">North Ridge Creative</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header>
+      <div style="flex:1">
+        <div class="badge">Services</div>
+        <h1>Solutions for every stage: fixes → full build</h1>
+        <p style="color:var(--muted)">Detailed pages so you can hand this to a client — copy content, update branding, and you're ready.</p>
+      </div>
+
+      <aside style="width:260px">
+        <div class="card">
+          <strong>Talk with us</strong>
+          <p style="color:var(--muted); margin-top:6px">Quick consultations for scope & pricing — no pressure.</p>
+          <div class="cta"><a class="btn" href="#contact">Schedule call</a></div>
+        </div>
+      </aside>
+    </header>
+
+    <div class="grid">
+      <section>
+        <article class="card">
+          <h2>Design & UI</h2>
+          <p style="color:var(--muted)">We approach design with conversion in mind: clear hierarchy, simple navigation, and persuasive CTAs.</p>
+          <div style="margin-top:12px" class="service-list">
+            <div class="service-item">
+              <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#03151a"/><path d="M4 12h16" stroke="#6ee7b7" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div><strong>Landing & homepage design</strong><div class="small" style="color:var(--muted)">High-converting hero, services, and contact blocks.</div></div>
+            </div>
+            <div class="service-item">
+              <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#03151a"/><path d="M12 6v12M6 12h12" stroke="#6ee7b7" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div><strong>Style systems</strong><div class="small" style="color:var(--muted)">Colors, typography scale, and components for consistent brand presence.</div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:14px">
+          <h2>Website fixes & audits</h2>
+          <p style="color:var(--muted)">Fast diagnosis and prioritized fixes so you can get back to running the business.</p>
+          <ul style="color:var(--muted)">
+            <li>Performance & Core Web Vitals review</li>
+            <li>Mobile layout fixes</li>
+            <li>Accessibility improvements</li>
+          </ul>
+        </article>
+
+        <article class="card" style="margin-top:14px">
+          <h2>Full builds & handoff</h2>
+          <p style="color:var(--muted)">Clean, documented code that you can host anywhere. Optional CMS integration or static deployment.</p>
+          <div style="margin-top:12px">
+            <strong>What's included</strong>
+            <ul style="color:var(--muted)">
+              <li>Responsive HTML/CSS/JS</li>
+              <li>Image optimization</li>
+              <li>Deployment guidance & documentation</li>
+            </ul>
+          </div>
+        </article>
+
+        <div style="margin-top:20px" class="card">
+          <h3>Case studies</h3>
+          <div class="case-grid">
+            <div class="case">
+              <strong>Local Café</strong>
+              <div class="small">Redesigned landing and menu. Increased reservations by 32% in 6 weeks.</div>
+            </div>
+            <div class="case">
+              <strong>Auto Shop</strong>
+              <div class="small">Added appointment form + service pages. 18% more calls in month one.</div>
+            </div>
+            <div class="case">
+              <strong>Fitness Studio</strong>
+              <div class="small">Schedule-first site + class booking simplified user flow.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card" id="contact">
+          <h3>Get an estimate</h3>
+          <p style="color:var(--muted)">Send a short summary and we’ll reply with a quick estimate.</p>
+          <form onsubmit="alert('Demo: thank you — this site is static.'); return false" style="display:grid; gap:8px; margin-top:8px">
+            <input placeholder="Name" required/>
+            <input placeholder="Email" type="email" required/>
+            <textarea placeholder="Brief description" rows="4"></textarea>
+            <div style="display:flex; gap:8px"><button class="btn" type="submit">Send</button><button class="btn" style="background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted)">Call</button></div>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Add-ons</h4>
+          <ul style="color:var(--muted)">
+            <li>Monthly maintenance</li>
+            <li>Priority response</li>
+            <li>Content updates</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Contact</h4>
+          <div class="small">Email: <a href="mailto:hello@northridge.example">hello@northridge.example</a></div>
+          <div class="small" style="margin-top:6px">Phone: (555) 321-9876</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="y"></span> North Ridge Creative — <a href="index.html">Home</a>
+    </footer>
+  </main>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
