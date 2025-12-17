@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Medical Solutions of Arkansas | Non-Surgical Spinal Care</title>
+
+  <meta name="description" content="Modern Medical Solutions of Arkansas provides non-surgical spinal care, spinal decompression, and expert auto injury treatment. Led by Dr. Wilson. Call 501-280-0250." />
+
+  <style>
+    :root{
+      --primary:#1f6f8b;
+      --secondary:#2fa58a;
+      --dark:#0b5160;
+      --bg:#f6fafc;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --max-width:1150px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:linear-gradient(180deg,#eef7fa,var(--bg));
+      color:#0f1724;
+      line-height:1.5;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      max-width:var(--max-width);
+      margin:auto;
+      padding:24px 16px;
+    }
+
+    /* HEADER */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:800;
+      box-shadow:var(--shadow);
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:1.05rem;
+    }
+
+    .brand-text span{
+      font-size:0.8rem;
+      color:var(--muted);
+    }
+
+    .header-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .phone{
+      font-weight:700;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,0.08);
+    }
+
+    .cta{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:800;
+      box-shadow:var(--shadow);
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      gap:24px;
+      background:rgba(255,255,255,0.7);
+      padding:24px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .hero h1{
+      font-size:1.9rem;
+      margin:0;
+      line-height:1.15;
+    }
+
+    .hero p{
+      color:var(--muted);
+      max-width:620px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .hero img{
+      width:100%;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    /* SECTIONS */
+    section.card{
+      background:var(--card);
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin-top:22px;
+    }
+
+    section.card h2{
+      margin-top:0;
+      font-size:1.4rem;
+    }
+
+    .causes{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .cause{
+      padding:12px;
+      border-radius:10px;
+      background:linear-gradient(180deg,rgba(47,165,138,.08),rgba(31,111,139,.05));
+      font-weight:600;
+    }
+
+    .therapy{
+      display:flex;
+      gap:14px;
+      margin-top:12px;
+      padding:14px;
+      border-radius:12px;
+      background:#f8fcfd;
+    }
+
+    .therapy span{
+      background:var(--primary);
+      color:white;
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:10px;
+      font-weight:800;
+      flex-shrink:0;
+    }
+
+    .checklist ul{
+      padding-left:20px;
+      color:var(--muted);
+    }
+
+    blockquote{
+      border-left:4px solid var(--secondary);
+      padding-left:14px;
+      margin:14px 0;
+      color:var(--muted);
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      gap:20px;
+    }
+
+    input,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,.12);
+      font-size:1rem;
+    }
+
+    textarea{min-height:110px}
+
+    button{
+      background:var(--dark);
+      color:white;
+      border:none;
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:30px;
+      color:var(--muted);
+      font-size:0.9rem;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    /* RESPONSIVE */
+    @media(min-width:900px){
+      .hero{
+        grid-template-columns:1fr 420px;
+        align-items:center;
+      }
+      .contact-grid{
+        grid-template-columns:1fr 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <div class="logo">MMS</div>
+      <div class="brand-text">
+        <strong>Modern Medical Solutions of Arkansas</strong>
+        <span>Non-Surgical Spinal Care</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a class="phone" href="tel:15012800250">📞 501-280-0250</a>
+      <a class="cta" href="#contact">Free Consultation</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Lasting Back & Neck Pain Relief — Without Surgery</h1>
+      <p>
+        Led by <strong>Dr. Wilson</strong>, Modern Medical Solutions of Arkansas specializes in identifying the true cause of spinal pain and restoring function through advanced, non-invasive treatments.
+      </p>
+      <div class="hero-actions">
+        <a class="cta" href="#contact">Start Your Relief Journey</a>
+        <a class="phone" href="tel:15012800250">Call 501-280-0250</a>
+      </div>
+      <p style="margin-top:8px;color:var(--muted)">
+        Conservative care • Evidence-guided • Patient-first approach
+      </p>
+    </div>
+    <img src="https://via.placeholder.com/720x420.png?text=Modern+Non-Surgical+Spinal+Care" alt="Doctor consulting patient about spinal care">
+  </section>
+
+  <!-- BACK PAIN -->
+  <section class="card">
+    <h2>Identifying the True Source of Your Back Pain — Beyond the Symptoms</h2>
+    <p class="muted">
+      Pain is rarely random. At our clinic, we focus on diagnosing the underlying structural or neurological cause — not just numbing discomfort.
+    </p>
+
+    <div class="causes">
+      <div class="cause">Postural Dysfunction</div>
+      <div class="cause">Bulging or Herniated Discs</div>
+      <div class="cause">Muscle Imbalances</div>
+      <div class="cause">Joint Degeneration</div>
+    </div>
+
+    <p class="muted" style="margin-top:14px">
+      Dr. Wilson conducts thorough spinal assessments and develops personalized treatment plans designed to correct the problem at its source and prevent recurrence.
+    </p>
+  </section>
+
+  <!-- DECOMPRESSION -->
+  <section class="card">
+    <h2>Advanced Spinal Decompression & Laser Therapy</h2>
+    <p class="muted">
+      Spinal decompression is a gentle, non-surgical method used to relieve pressure on spinal discs and nerves — often helping patients avoid injections or surgery.
+    </p>
+
+    <div class="therapy">
+      <span>D</span>
+      <div>
+        <strong>Non-Surgical Spinal Decompression</strong>
+        <p class="muted">
+          Carefully controlled traction reduces disc pressure, improves nutrient flow, and promotes healing in damaged spinal tissues.
+        </p>
+      </div>
+    </div>
+
+    <div class="therapy">
+      <span>L</span>
+      <div>
+        <strong>Decompression Laser Therapy</strong>
+        <p class="muted">
+          When clinically appropriate, laser therapy is used alongside decompression to reduce inflammation, accelerate tissue repair, and enhance outcomes.
+        </p>
+      </div>
+    </div>
+
+    <div class="therapy">
+      <span>S</span>
+      <div>
+        <strong>Surgery Is the Last Option</strong>
+        <p class="muted">
+          Surgery is not the only answer. We believe it should be the last option — not the first.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVA -->
+  <section class="card">
+    <h2>Whiplash & Motor Vehicle Accident Injury Care</h2>
+    <p class="muted">
+      Auto accidents frequently cause hidden spinal injuries. Early evaluation protects both your long-term health and your documentation.
+    </p>
+
+    <div class="checklist">
+      <h3>After an Accident — Do This Immediately</h3>
+      <ul>
+        <li>Photograph vehicle damage, license plates, and the accident scene.</li>
+        <li>Document all symptoms, even mild stiffness or headaches.</li>
+        <li>Seek a professional spinal evaluation within 24–72 hours.</li>
+        <li>Keep all medical and repair records for insurance or legal use.</li>
+      </ul>
+    </div>
+
+    <p class="muted">
+      Our clinic routinely evaluates and treats whiplash, soft-tissue injuries, and disc trauma following auto accidents.
+    </p>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="card">
+    <h2>Patient Results</h2>
+
+    <blockquote>
+      “I was told surgery was my only option. After treatment here, my pain is gone and I avoided surgery entirely.”
+    </blockquote>
+
+    <blockquote>
+      “Dr. Wilson took the time to explain everything and actually fixed the problem instead of masking it.”
+    </blockquote>
+
+    <blockquote>
+      “After my car accident, they documented everything and helped me recover fully.”
+    </blockquote>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="card" id="contact">
+    <h2>Schedule Your Free Consultation</h2>
+
+    <div class="contact-grid">
+      <div>
+        <p class="muted">
+          <strong>Modern Medical Solutions of Arkansas</strong><br>
+          Phone: <a href="tel:15012800250">501-280-0250</a><br>
+          Provider: Dr. Wilson
+        </p>
+
+        <p class="muted">
+          Call today to discuss your condition and determine whether non-surgical spinal care is right for you.
+        </p>
+      </div>
+
+      <form onsubmit="event.preventDefault();alert('Thank you! We will contact you shortly.');">
+        <input type="text" placeholder="Full Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <textarea placeholder="Brief description of your pain or injury"></textarea>
+        <button type="submit">Request Consultation</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      © <span id="year"></span> Modern Medical Solutions of Arkansas
+    </div>
+    <div>
+      Non-Surgical Spinal Care • Arkansas
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
