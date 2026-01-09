@@ -15,6 +15,7 @@
       --container-width:1100px;
       --radius:14px;
       --text-dark:#0b1220;
+      --humanitix-url: "https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now";
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -77,6 +78,7 @@
         url('https://cdn.filestackcontent.com/resize=width:1600/output=format:jpg,quality:40/qRRj3q6SSdSBePSNxJsO') center/cover no-repeat;
       filter:contrast(1.02) saturate(1.05);
       z-index:0;
+      transition:background-position .25s ease;
     }
     .hero-content{position:relative;z-index:2;padding:80px 20px}
     .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
@@ -123,6 +125,14 @@
     .speaker h5{margin:0;font-size:16px}
     .speaker p{margin:4px 0 0;color:var(--muted);font-size:14px}
 
+    /* special banner avatar: use contain & center so PNGs aren't off-center or cropped */
+    .banner-avatar{
+      width:88px;height:72px;border-radius:8px;flex-shrink:0;background:#f3f4f6;
+      background-size:contain;background-repeat:no-repeat;background-position:center center;
+      display:block;
+      box-shadow:0 4px 12px rgba(2,6,23,0.04);
+    }
+
     /* SCHEDULE / DONATE / FAQ */
     .schedule-box{background:linear-gradient(90deg,#fff,#fff);padding:18px;border-radius:12px;border:1px solid rgba(15,23,36,0.04)}
     .faq dt{font-weight:700;margin-top:12px}
@@ -144,6 +154,13 @@
       .speakers-grid{grid-template-columns:1fr}
       .hero{min-height:420px}
       .hero h1{font-size:28px}
+
+      /* make hero image better for mobile focal point (shows upper subject area) */
+      .hero::before{
+        background-position: center 20% !important;
+        background-size:cover !important;
+      }
+      .hero-content{padding:44px 16px}
     }
 
     .muted-2{color:#475569}
@@ -170,8 +187,8 @@
         <a href="#speakers">Speakers</a>
         <a href="#schedule">Schedule</a>
         <a href="#donate">Donate</a>
-        <!-- GET TICKETS: explicit white text for accessibility -->
-        <a class="btn btn-cta" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Get Tickets</a>
+        <!-- GET TICKETS -->
+        <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Get Tickets</a>
       </nav>
     </div>
   </div>
@@ -193,14 +210,14 @@
           </div>
 
           <div class="hero-cta" style="margin-top:18px">
-            <a class="btn btn-cta" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Get Tickets</a>
+            <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Get Tickets</a>
             <a class="btn btn-ghost" href="#donate">Donate / Scholarships</a>
           </div>
 
           <p style="margin-top:14px;color:rgba(255,255,255,0.85);font-size:14px">Tickets & donations are processed on the event site.</p>
         </div>
 
-        <!-- RIGHT: Registration card uses mlk40.education links -->
+        <!-- RIGHT: Registration card -->
         <aside class="card ticket-card" aria-label="Registration overview">
           <h3>Ways to participate</h3>
           <p class="muted">Choose the path that fits you — in-person attendance links to the event site.</p>
@@ -211,7 +228,7 @@
                 <div style="font-weight:800">Attend In-Person</div>
                 <div class="small muted">Southwest Magnet High School</div>
               </div>
-              <a class="btn btn-cta" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Tickets</a>
+              <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Tickets</a>
             </div>
 
             <div style="display:flex;justify-content:space-between;align-items:center">
@@ -219,7 +236,7 @@
                 <div style="font-weight:800">Gideon VIP</div>
                 <div class="small muted">Join 300 leaders (VIP)</div>
               </div>
-              <a class="btn btn-ghost small" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">$300 (via host)</a>
+              <a class="btn btn-ghost small" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">$300 (via host)</a>
             </div>
 
             <div style="display:flex;justify-content:space-between;align-items:center">
@@ -227,7 +244,7 @@
                 <div style="font-weight:800">Mountaintop Visionaries</div>
                 <div class="small muted">Ambassador level — limited to 40</div>
               </div>
-              <a class="btn btn-ghost small" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">$500</a>
+              <a class="btn btn-ghost small" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">$500</a>
             </div>
 
             <div style="display:flex;justify-content:space-between;align-items:center">
@@ -235,7 +252,7 @@
                 <div style="font-weight:800">Student Scholarships</div>
                 <div class="small muted">Scholarship seats; suggested minimum $100 / student</div>
               </div>
-              <a class="btn btn-ghost small" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Sponsor</a>
+              <a class="btn btn-ghost small" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Sponsor</a>
             </div>
           </div>
         </aside>
@@ -252,7 +269,7 @@
             <h2 class="section-title">About MLK40</h2>
             <p class="muted">Forty years later we gather to honor Dr. King's vision and advance the next 40 years of leadership and opportunity. MLK40 unites visionaries, influencers, and students for a day of learning, certification, and investment in the creative economy. The initiative also supports a $1,000,000 infusion to fund scholarships, NIL programs, coursework, and institutional projects.</p>
             <div style="height:12px"></div>
-            <a class="btn btn-cta" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Register / Learn More</a>
+            <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Register / Learn More</a>
           </div>
 
           <div style="width:420px">
@@ -282,21 +299,21 @@
             <h4>1. The Making of the MLK Holiday (1968—1986)</h4>
             <p class="muted">Historical context and the movement that turned a moment into a national holiday — the politics, advocacy, and leaders who made it happen.</p>
             <div style="height:12px"></div>
-            <a class="small btn btn-ghost" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Learn More</a>
+            <a class="small btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Learn More</a>
           </article>
 
           <article class="module" role="listitem">
             <h4>2. The Black Tax: The Cost of Being Black in America</h4>
             <p class="muted">A frank look at economic, social, and institutional costs — and strategies for optimizing individual and community value.</p>
             <div style="height:12px"></div>
-            <a class="small btn btn-ghost" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Learn More</a>
+            <a class="small btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Learn More</a>
           </article>
 
           <article class="module" role="listitem">
             <h4>3. Our Move Now: Careers, Wealth, Institutions & Programs</h4>
             <p class="muted">Practical paths: careers, wealth creation, building institutions and programs that last for future generations.</p>
             <div style="height:12px"></div>
-            <a class="small btn btn-ghost" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Learn More</a>
+            <a class="small btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Learn More</a>
           </article>
         </div>
       </div>
@@ -319,9 +336,9 @@
             </div>
           </div>
 
-          <!-- Banner thumbnail (used also as ticket banner on event site) -->
+          <!-- Banner thumbnail (now centered & using contain to avoid off-center PNG issues) -->
           <div class="card speaker" role="listitem" aria-label="Event banner">
-            <div class="avatar" style="background-image:url('https://cdn.filestackcontent.com/resize=width:1600/output=format:jpg,quality:40/rcwCxXmsTqWz9bCBAuJ3')" aria-hidden="true"></div>
+            <div class="banner-avatar" style="background-image:url('https://cdn.filestackcontent.com/resize=width:1600/output=format:png/rcwCxXmsTqWz9bCBAuJ3')" aria-hidden="true"></div>
             <div>
               <h5>Event Banner</h5>
               <p class="muted">MLK Holiday Weekend — The Huddle from the Mountaintop.</p>
@@ -360,7 +377,7 @@
             <h4 style="margin-top:0">Registration Notes</h4>
             <p class="muted">Tickets, VIPs, ambassador passes, and student scholarship sponsorships are managed through the event portal. Use the "Get Tickets" button in the header or the links below.</p>
             <div style="height:12px"></div>
-            <a class="btn btn-cta" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Event Site</a>
+            <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Event Site</a>
           </div>
         </div>
       </div>
@@ -374,7 +391,7 @@
             <h3 class="section-title">Support Scholarships & the $1,000,000 Initiative</h3>
             <p class="muted">Help fund student scholarships, NIL programs, coursework, and institutional investments. Contributions are collected through the event donation/ticketing portal.</p>
             <div style="height:12px"></div>
-            <a class="btn btn-cta" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Donate / Sponsor a Student</a>
+            <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Donate / Sponsor a Student</a>
           </div>
 
           <div style="width:420px">
@@ -412,12 +429,12 @@
           <p class="muted">Questions about tickets, sponsorships, or logistics? Contact the event host via the event site or use the contact info below.</p>
 
           <div style="height:8px"></div>
-          <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:contact@example.org">contact@example.org</a></p>
+          <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:thecollege@aol.com">thecollege@aol.com</a></p>
           <p style="margin:8px 0"><strong>Event site:</strong><br/>
-          <a href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">www.mlk40.education</a></p>
+          <a href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now</a></p>
 
           <div style="height:12px"></div>
-          <a class="btn btn-ghost" href="http://www.mlk40.education" target="_blank" rel="noopener noreferrer">Contact Host / View Tickets</a>
+          <a class="btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Contact Host / View Tickets</a>
         </aside>
       </div>
     </section>
@@ -445,10 +462,10 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // quick keyboard focus helper updated to point to mlk40.education
+    // quick keyboard focus helper updated to point to humanitix event link
     document.addEventListener('keydown', (e) => {
       if(e.key === 't' || e.key === 'T') {
-        const ticket = document.querySelector('a[href*="mlk40.education"]');
+        const ticket = document.querySelector('a[href*="humanitix.com"]');
         if(ticket) ticket.focus();
       }
     });
