@@ -17,8 +17,10 @@
       --text-dark:#0b1220;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    /* base resets + stop horizontal pan */
+    *{box-sizing:border-box;min-width:0} /* allow grid children to shrink */
+    html,body{height:100%;overflow-x:hidden} /* prevents semi-blank horizontal pan on mobile */
+    img{max-width:100%;height:auto;display:block}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
@@ -115,7 +117,7 @@
       box-shadow:0 4px 12px rgba(2,6,23,0.04);
     }
 
-    /* NEWS (new tab section image) */
+    /* NEWS image */
     .news-hero{width:100%;overflow:hidden;border-radius:10px;margin-bottom:12px}
     .news-hero img{width:100%;height:auto;display:block;object-fit:cover;object-position:center}
 
@@ -136,9 +138,18 @@
     .schedule-box{background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(15,23,36,0.04)}
     .faq dt{font-weight:700;margin-top:12px}
     .faq dd{margin:6px 0 12px;color:var(--muted)}
+    .faq dt,.faq dd{word-break:break-word;overflow-wrap:break-word}
 
     footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(15,23,36,0.04);font-size:13px}
     .sponsors{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
+    /* CONTACT GRID (used for FAQ + contact) */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:16px;
+      align-items:start;
+    }
 
     /* MOBILE STYLES - optimized */
     @media (max-width:980px){
@@ -147,6 +158,7 @@
       .nav-links{display:none}
       .cards{grid-template-columns:1fr 1fr}
       .speakers-grid{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr;gap:12px} /* ensure collapses earlier if needed */
     }
     @media (max-width:640px){
       html,body{font-size:15px}
@@ -159,7 +171,7 @@
       .pill{font-size:12px;padding:6px 8px}
       .hero-cta{gap:8px}
 
-      /* hide desktop ticket card inside hero to avoid cover */
+      /* hide desktop ticket card inside hero */
       .hero .ticket-card{display:none}
 
       /* mobile compact registration card shown below hero */
@@ -180,12 +192,16 @@
       .speakers-grid{grid-template-columns:1fr}
       .section{padding:32px 0}
       .banner-avatar{width:72px;height:56px}
+
+      /* ensure contact-grid is single column on mobile to avoid awkward layout */
+      .contact-grid{grid-template-columns:1fr;gap:12px}
+      .contact-grid aside.card{width:100%;padding:12px}
     }
 
     /* hide mobile reg on desktop */
     .mobile-reg{display:none}
 
-    /* sticky mobile CTA so users always have Get Tickets accessible */
+    /* sticky mobile CTA */
     .sticky-cta{
       display:none;
       position:fixed;
@@ -208,7 +224,7 @@
   </style>
 </head>
 <body>
-  <!-- Top nav (note: removed the extra "original producers" nav tab per request) -->
+  <!-- Top nav -->
   <div class="topbar">
     <div class="wrap nav" role="navigation" aria-label="Main navigation">
       <div class="brand">
@@ -350,7 +366,7 @@
             <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Register / Learn More</a>
           </div>
 
-          <div style="width:360px;min-width:200px">
+          <div style="width:360px;min-width:200px;max-width:100%">
             <div class="card">
               <h3 style="margin-top:0">Event Highlights</h3>
               <ul style="padding-left:16px;margin:8px 0 0;color:var(--muted);font-size:14px">
@@ -365,13 +381,12 @@
       </div>
     </section>
 
-    <!-- NEW SECTION (kept on page but not in top-nav) -->
+    <!-- ORIGINAL PRODUCERS (kept on page but not in top-nav) -->
     <section id="original-producers" class="section" aria-labelledby="original-producers-title">
       <div class="wrap">
         <h3 id="original-producers-title" class="section-title">Original Producers of 1st 40 Years of MLK Holiday Head to Arkansas to Start Next 40 years</h3>
         <p class="muted">A look at the original producers and leaders who made the first 40 years of the MLK Holiday possible — now coming to Arkansas to begin the next chapter.</p>
 
-        <!-- responsive photo display using the supplied image -->
         <div class="news-hero" aria-hidden="false">
           <img src="https://pbs.twimg.com/media/G-Ul5VnXgAAmWUE.jpg" alt="Original producers head to Arkansas — MLK40" />
         </div>
@@ -463,7 +478,7 @@
           </div>
         </div>
 
-        <div style="width:320px;min-width:200px">
+        <div style="width:320px;min-width:200px;max-width:100%">
           <div class="card">
             <h4 style="margin-top:0">Registration Notes</h4>
             <p class="muted">Tickets, VIPs, ambassador passes, and student scholarship sponsorships are managed through the event portal. Use the "Get Tickets" button in the header or the links below.</p>
@@ -485,7 +500,7 @@
             <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Donate / Sponsor a Student</a>
           </div>
 
-          <div style="width:320px;min-width:200px">
+          <div style="width:320px;min-width:200px;max-width:100%">
             <div class="card">
               <h4 style="margin-top:0">Why give?</h4>
               <p class="muted">Donations unlock scholarship seats for students, support NIL learning, and seed programs that expand opportunity across the community.</p>
@@ -495,9 +510,9 @@
       </div>
     </section>
 
-    <!-- FAQ + CONTACT -->
+    <!-- FAQ + CONTACT fixed: use contact-grid class -->
     <section id="contact" class="section">
-      <div class="wrap" style="display:grid;grid-template-columns:1fr 300px;gap:16px;align-items:start">
+      <div class="wrap contact-grid">
         <div>
           <h3 class="section-title">FAQ</h3>
           <dl class="faq">
@@ -557,7 +572,8 @@
 
   <script>
     // small accessibility helpers
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // keyboard focus helper
     document.addEventListener('keydown', (e) => {
@@ -566,14 +582,6 @@
         if(ticket) ticket.focus();
       }
     });
-
-    // On small screens, slightly nudge hero background position based on scroll to keep focal area visible
-    if (window.matchMedia && window.matchMedia('(max-width:640px)').matches) {
-      window.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero::before');
-        // limited JS here; CSS handles main behavior. leaving this as a noop placeholder to avoid heavy JS.
-      }, {passive:true});
-    }
   </script>
 </body>
 </html>
