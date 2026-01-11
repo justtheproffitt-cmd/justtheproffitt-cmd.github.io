@@ -15,7 +15,6 @@
       --container-width:1100px;
       --radius:14px;
       --text-dark:#0b1220;
-      --humanitix-url: "https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now";
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -87,7 +86,7 @@
     .hero p.lead{color:rgba(255,255,255,0.95);margin:12px 0 18px;font-size:17px}
     .hero .meta{display:flex;gap:10px;flex-wrap:wrap;color:rgba(255,255,255,0.95);font-weight:600}
 
-    /* PILL fix: background is light but hero text is white — ensure pill text is dark for readability */
+    /* PILL fix */
     .pill{
       display:inline-block;padding:8px 12px;border-radius:999px;background:#fbfbfb;border:1px solid rgba(15,23,36,0.04);
       color:var(--text-dark); /* dark text for contrast on light pill */
@@ -125,7 +124,7 @@
     .speaker h5{margin:0;font-size:16px}
     .speaker p{margin:4px 0 0;color:var(--muted);font-size:14px}
 
-    /* special banner avatar: use contain & center so PNGs aren't off-center or cropped */
+    /* banner avatar */
     .banner-avatar{
       width:88px;height:72px;border-radius:8px;flex-shrink:0;background:#f3f4f6;
       background-size:contain;background-repeat:no-repeat;background-position:center center;
@@ -149,19 +148,41 @@
       .speakers-grid{grid-template-columns:1fr 1fr}
       .nav-links{display:none}
     }
-    @media (max-width:640px){
-      .cards{grid-template-columns:1fr}
-      .speakers-grid{grid-template-columns:1fr}
-      .hero{min-height:420px}
-      .hero h1{font-size:28px}
 
-      /* make hero image better for mobile focal point (shows upper subject area) */
+    /* MOBILE ADJUSTMENTS */
+    @media (max-width:640px){
+      /* make hero more compact and show better focal area */
+      .hero{min-height:360px}
       .hero::before{
         background-position: center 20% !important;
         background-size:cover !important;
       }
-      .hero-content{padding:44px 16px}
+      .hero-content{padding:36px 16px}
+      .hero h1{font-size:28px}
+
+      /* hide the original registration card that sits inside the hero */
+      .hero .ticket-card{display:none}
+
+      /* show a compact registration card below the hero */
+      .mobile-reg{display:block;margin:16px auto;width:100%;max-width:720px;padding:0 20px}
+
+      .mobile-reg .card{
+        padding:12px;
+        border-radius:12px;
+        box-shadow:0 6px 20px rgba(2,6,23,0.06);
+      }
+      .mobile-reg .card h3{font-size:15px;margin-bottom:8px}
+      .mobile-reg .card .small{font-size:13px}
+      .mobile-reg .btn{padding:8px 12px;border-radius:8px;font-weight:800}
+      .mobile-reg .btn-cta{padding:8px 12px}
+
+      /* shrink module grid to single column on small screens */
+      .cards{grid-template-columns:1fr}
+      .speakers-grid{grid-template-columns:1fr}
     }
+
+    /* default: hide mobile card in desktop */
+    .mobile-reg{display:none}
 
     .muted-2{color:#475569}
     .small{font-size:14px}
@@ -203,21 +224,20 @@
           <p class="lead">Reflecting the Past. Inspecting the Present. Projecting the Future. Join visionaries, influencers, and students for a day of learning, certification, and investment in the creative economy.</p>
 
           <div class="meta">
-            <!-- PILLs now have dark text for readability against light background -->
             <div class="pill">Sat, Jan 17, 2026 • 12:00 PM — 3:00 PM CST</div>
             <div class="pill">Southwest Magnet High School — Little Rock, AR</div>
             <div class="pill">Hosted by Faith First Responders United & TCAA NIL League</div>
           </div>
 
-          <div class="hero-cta" style="margin-top:18px">
+          <div class="hero-cta" style="margin-top:12px">
             <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Get Tickets</a>
             <a class="btn btn-ghost" href="#donate">Donate / Scholarships</a>
           </div>
 
-          <p style="margin-top:14px;color:rgba(255,255,255,0.85);font-size:14px">Tickets & donations are processed on the event site.</p>
+          <p style="margin-top:12px;color:rgba(255,255,255,0.85);font-size:13px">Tickets & donations are processed on the event site.</p>
         </div>
 
-        <!-- RIGHT: Registration card -->
+        <!-- RIGHT: Registration card (desktop/tablet only) -->
         <aside class="card ticket-card" aria-label="Registration overview">
           <h3>Ways to participate</h3>
           <p class="muted">Choose the path that fits you — in-person attendance links to the event site.</p>
@@ -236,7 +256,7 @@
                 <div style="font-weight:800">Gideon VIP</div>
                 <div class="small muted">Join 300 leaders (VIP)</div>
               </div>
-              <a class="btn btn-ghost small" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">$300 (via host)</a>
+              <a class="btn btn-ghost small" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">$300</a>
             </div>
 
             <div style="display:flex;justify-content:space-between;align-items:center">
@@ -259,6 +279,48 @@
       </div>
     </div>
   </header>
+
+  <!-- MOBILE compact registration card (appears only on small screens) -->
+  <div class="mobile-reg">
+    <div class="card">
+      <h3 style="margin-top:0">Ways to participate</h3>
+      <p class="muted small">Quick actions — the site opens in a new tab.</p>
+
+      <div style="display:grid;gap:10px;margin-top:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800;font-size:14px">Attend In-Person</div>
+            <div class="small muted">Southwest Magnet High School</div>
+          </div>
+          <a class="btn btn-cta" style="font-size:14px;padding:8px 12px" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Tickets</a>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800;font-size:14px">Gideon VIP</div>
+            <div class="small muted">Join 300 leaders (VIP)</div>
+          </div>
+          <a class="btn btn-ghost small" style="font-size:13px;padding:7px 10px" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">$300</a>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800;font-size:14px">Mountaintop Visionaries</div>
+            <div class="small muted">Ambassador level — limited to 40</div>
+          </div>
+          <a class="btn btn-ghost small" style="font-size:13px;padding:7px 10px" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">$500</a>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800;font-size:14px">Student Scholarships</div>
+            <div class="small muted">Suggested min. $100 / student</div>
+          </div>
+          <a class="btn btn-ghost small" style="font-size:13px;padding:7px 10px" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Sponsor</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <main>
@@ -327,7 +389,7 @@
 
         <div style="height:18px"></div>
         <div class="speakers-grid" role="list">
-          <!-- Shawn D. Rochester headshot from public profile -->
+          <!-- Shawn D. Rochester headshot -->
           <div class="card speaker" role="listitem" aria-label="Shawn D. Rochester">
             <div class="avatar" style="background-image:url('https://aalbc.com/author-photos/shawn_d_rochester.jpg')" aria-hidden="true"></div>
             <div>
@@ -336,7 +398,7 @@
             </div>
           </div>
 
-          <!-- Banner thumbnail (now centered & using contain to avoid off-center PNG issues) -->
+          <!-- Banner thumbnail (centered & using contain to avoid off-center PNG issues) -->
           <div class="card speaker" role="listitem" aria-label="Event banner">
             <div class="banner-avatar" style="background-image:url('https://cdn.filestackcontent.com/resize=width:1600/output=format:png/rcwCxXmsTqWz9bCBAuJ3')" aria-hidden="true"></div>
             <div>
@@ -451,7 +513,6 @@
 
       <div class="sponsors">
         <div class="small muted">Sponsors & Partners:</div>
-        <!-- Use client sponsor logos here -->
         <img src="sponsor1.png" alt="Sponsor 1" style="height:26px;opacity:0.9">
         <img src="sponsor2.png" alt="Sponsor 2" style="height:26px;opacity:0.9">
       </div>
@@ -462,7 +523,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // quick keyboard focus helper updated to point to humanitix event link
+    // keyboard focus helper points to humanitix event link
     document.addEventListener('keydown', (e) => {
       if(e.key === 't' || e.key === 'T') {
         const ticket = document.querySelector('a[href*="humanitix.com"]');
