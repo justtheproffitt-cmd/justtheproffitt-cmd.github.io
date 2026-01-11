@@ -13,14 +13,11 @@
       --muted:#6b7280;
       --card:#ffffff;
       --container-width:1100px;
-      --radius:12px;
+      --radius:14px;
       --text-dark:#0b1220;
     }
-
-    /* base resets + stop horizontal pan */
-    *{box-sizing:border-box;min-width:0} /* allow grid children to shrink */
-    html,body{height:100%;overflow-x:hidden} /* prevents semi-blank horizontal pan on mobile */
-    img{max-width:100%;height:auto;display:block}
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
@@ -28,7 +25,7 @@
       background:linear-gradient(180deg,#f8fafc 0%, #ffffff 100%);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
+      line-height:1.45;
       font-size:16px;
     }
     a{color:inherit;text-decoration:none}
@@ -38,25 +35,25 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:60;
+      z-index:50;
       backdrop-filter:saturate(120%) blur(6px);
-      background:rgba(255,255,255,0.92);
-      border-bottom:1px solid rgba(15,23,36,0.06);
+      background:rgba(255,255,255,0.88);
+      border-bottom:1px solid rgba(15,23,36,0.04);
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{
       width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff8b68);
       display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:14px;
-      box-shadow:0 6px 18px rgba(17,24,39,0.06);
+      box-shadow:0 6px 18px rgba(17,24,39,0.08);
     }
-    .site-title{font-weight:800;font-size:15px;letter-spacing:.2px}
-    .nav-links{display:flex;gap:14px;align-items:center}
-    .nav-links a{color:var(--muted);font-weight:600;font-size:14px}
+    .site-title{font-weight:700;font-size:15px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--muted);font-weight:600}
     .btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
     .btn-cta{
       background:var(--accent);
-      color:#fff!important;
+      color: #ffffff !important; /* explicit white for contrast */
       box-shadow:0 10px 30px rgba(255,90,60,0.12);
     }
     .btn-ghost{
@@ -66,7 +63,7 @@
     /* HERO */
     .hero{
       position:relative;
-      min-height:460px;
+      min-height:520px;
       display:flex;
       align-items:center;
       color:white;
@@ -78,149 +75,119 @@
       background:
         linear-gradient(180deg, rgba(6,11,20,0.45), rgba(6,11,20,0.55)),
         url('https://cdn.filestackcontent.com/resize=width:1600/output=format:jpg,quality:40/qRRj3q6SSdSBePSNxJsO') center/cover no-repeat;
+      filter:contrast(1.02) saturate(1.05);
       z-index:0;
-      transition:background-position .25s ease, background-size .25s ease;
-      will-change:background-position;
+      transition:background-position .25s ease;
     }
-    .hero-content{position:relative;z-index:2;padding:64px 20px}
-    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center}
-    .hero h1{margin:0;font-size:34px;line-height:1.02;letter-spacing:-0.5px;font-weight:800;text-transform:uppercase}
-    .hero .tag{color:#fbe8e2;background:rgba(255,255,255,0.06);display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;margin-bottom:10px}
-    .hero p.lead{color:rgba(255,255,255,0.95);margin:10px 0 16px;font-size:16px}
-    .hero .meta{display:flex;gap:8px;flex-wrap:wrap;color:rgba(255,255,255,0.95);font-weight:700}
+    .hero-content{position:relative;z-index:2;padding:80px 20px}
+    .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+    .hero h1{margin:0;font-size:36px;line-height:1.02;letter-spacing:-0.5px;font-weight:800;text-transform:uppercase}
+    .hero .tag{color:#fbe8e2;background:rgba(255,255,255,0.06);display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:12px}
+    .hero p.lead{color:rgba(255,255,255,0.95);margin:12px 0 18px;font-size:17px}
+    .hero .meta{display:flex;gap:10px;flex-wrap:wrap;color:rgba(255,255,255,0.95);font-weight:600}
 
+    /* PILL fix */
     .pill{
-      display:inline-block;padding:7px 10px;border-radius:999px;background:#fff;border:1px solid rgba(15,23,36,0.04);
-      color:var(--text-dark); font-weight:700;font-size:13px;
+      display:inline-block;padding:8px 12px;border-radius:999px;background:#fbfbfb;border:1px solid rgba(15,23,36,0.04);
+      color:var(--text-dark); /* dark text for contrast on light pill */
+      font-weight:700;
     }
 
-    .hero-cta{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+    .hero-cta{display:flex;gap:10px;margin-top:18px}
 
     /* CARD */
     .card{
-      background:white;border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(2,6,23,0.06);
+      background:white;border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.06);
     }
     .ticket-card h3{margin:0 0 6px;font-size:16px}
     .ticket-card p{color:var(--muted);margin:0 0 12px}
 
+    /* make ghost small buttons readable on white cards */
     .card .btn-ghost.small{
       color:var(--accent);
       border-color:rgba(15,23,36,0.06);
       background:#fff;
     }
 
+    /* REGISTRATION / MODULES / GRID */
+    .section{padding:64px 0;border-top:1px solid rgba(15,23,36,0.04)}
+    .section .section-title{font-size:20px;font-weight:800;margin-bottom:10px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .module{padding:20px;border-radius:12px;background:linear-gradient(180deg,#fff,#fafafa);border:1px solid rgba(15,23,36,0.04)}
+    .module h4{margin:0 0 8px}
+    .muted{color:var(--muted)}
+
+    /* SPEAKERS */
+    .speakers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .speaker{display:flex;gap:12px;align-items:center}
+    .speaker .avatar{width:72px;height:72px;border-radius:12px;flex-shrink:0;background:#eee;background-size:cover;background-position:center}
+    .speaker h5{margin:0;font-size:16px}
+    .speaker p{margin:4px 0 0;color:var(--muted);font-size:14px}
+
     /* banner avatar */
     .banner-avatar{
       width:88px;height:72px;border-radius:8px;flex-shrink:0;background:#f3f4f6;
-      background-size:cover;background-repeat:no-repeat;background-position:center center;
+      background-size:contain;background-repeat:no-repeat;background-position:center center;
       display:block;
       box-shadow:0 4px 12px rgba(2,6,23,0.04);
     }
 
-    /* NEWS image */
-    .news-hero{width:100%;overflow:hidden;border-radius:10px;margin-bottom:12px}
-    .news-hero img{width:100%;height:auto;display:block;object-fit:cover;object-position:center}
-
-    /* GRID / content */
-    .section{padding:54px 0;border-top:1px solid rgba(15,23,36,0.04)}
-    .section .section-title{font-size:18px;font-weight:800;margin-bottom:8px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .module{padding:16px;border-radius:10px;background:linear-gradient(180deg,#fff,#fafafa);border:1px solid rgba(15,23,36,0.04)}
-    .module h4{margin:0 0 8px}
-    .muted{color:var(--muted);font-size:14px}
-
-    .speakers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .speaker{display:flex;gap:12px;align-items:center}
-    .speaker .avatar{width:72px;height:72px;border-radius:10px;flex-shrink:0;background:#eee;background-size:cover;background-position:center}
-    .speaker h5{margin:0;font-size:15px}
-    .speaker p{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-    .schedule-box{background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(15,23,36,0.04)}
+    /* SCHEDULE / DONATE / FAQ */
+    .schedule-box{background:linear-gradient(90deg,#fff,#fff);padding:18px;border-radius:12px;border:1px solid rgba(15,23,36,0.04)}
     .faq dt{font-weight:700;margin-top:12px}
     .faq dd{margin:6px 0 12px;color:var(--muted)}
-    .faq dt,.faq dd{word-break:break-word;overflow-wrap:break-word}
 
-    footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(15,23,36,0.04);font-size:13px}
-    .sponsors{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    /* FOOTER */
+    footer{padding:36px 0;color:var(--muted);border-top:1px solid rgba(15,23,36,0.04);font-size:14px}
+    .sponsors{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
 
-    /* CONTACT GRID (used for FAQ + contact) */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 300px;
-      gap:16px;
-      align-items:start;
-    }
-
-    /* MOBILE STYLES - optimized */
+    /* RESPONSIVE */
     @media (max-width:980px){
-      .wrap{padding:0 16px}
-      .hero-grid{grid-template-columns:1fr;gap:14px}
-      .nav-links{display:none}
+      .hero-grid{grid-template-columns:1fr;gap:18px}
       .cards{grid-template-columns:1fr 1fr}
       .speakers-grid{grid-template-columns:1fr 1fr}
-      .contact-grid{grid-template-columns:1fr;gap:12px} /* ensure collapses earlier if needed */
+      .nav-links{display:none}
     }
-    @media (max-width:640px){
-      html,body{font-size:15px}
-      .topbar{height:56px}
-      .hero{min-height:320px}
-      .hero::before{background-position:center 18% !important;background-size:cover!important}
-      .hero-content{padding:28px 14px}
-      .hero h1{font-size:24px}
-      .hero p.lead{font-size:14px}
-      .pill{font-size:12px;padding:6px 8px}
-      .hero-cta{gap:8px}
 
-      /* hide desktop ticket card inside hero */
+    /* MOBILE ADJUSTMENTS */
+    @media (max-width:640px){
+      /* make hero more compact and show better focal area */
+      .hero{min-height:360px}
+      .hero::before{
+        background-position: center 20% !important;
+        background-size:cover !important;
+      }
+      .hero-content{padding:36px 16px}
+      .hero h1{font-size:28px}
+
+      /* hide the original registration card that sits inside the hero */
       .hero .ticket-card{display:none}
 
-      /* mobile compact registration card shown below hero */
-      .mobile-reg{display:block;margin:12px auto;width:100%;max-width:720px;padding:0 12px}
-      .mobile-reg .card{padding:10px;border-radius:10px}
-      .mobile-reg .card h3{font-size:15px;margin-bottom:6px}
-      .mobile-reg .muted{font-size:13px}
-      .mobile-reg .btn{display:inline-block;padding:9px 12px;font-size:15px;border-radius:9px}
-      .mobile-reg .btn-cta{width:42%}
-      .mobile-reg .btn-ghost{width:42%;text-align:center}
+      /* show a compact registration card below the hero */
+      .mobile-reg{display:block;margin:16px auto;width:100%;max-width:720px;padding:0 20px}
 
-      /* buttons stack full-width for narrower phones */
-      @media (max-width:420px){
-        .mobile-reg .btn-cta, .mobile-reg .btn-ghost{width:100%;display:block}
+      .mobile-reg .card{
+        padding:12px;
+        border-radius:12px;
+        box-shadow:0 6px 20px rgba(2,6,23,0.06);
       }
+      .mobile-reg .card h3{font-size:15px;margin-bottom:8px}
+      .mobile-reg .card .small{font-size:13px}
+      .mobile-reg .btn{padding:8px 12px;border-radius:8px;font-weight:800}
+      .mobile-reg .btn-cta{padding:8px 12px}
 
+      /* shrink module grid to single column on small screens */
       .cards{grid-template-columns:1fr}
       .speakers-grid{grid-template-columns:1fr}
-      .section{padding:32px 0}
-      .banner-avatar{width:72px;height:56px}
-
-      /* ensure contact-grid is single column on mobile to avoid awkward layout */
-      .contact-grid{grid-template-columns:1fr;gap:12px}
-      .contact-grid aside.card{width:100%;padding:12px}
     }
 
-    /* hide mobile reg on desktop */
+    /* default: hide mobile card in desktop */
     .mobile-reg{display:none}
 
-    /* sticky mobile CTA */
-    .sticky-cta{
-      display:none;
-      position:fixed;
-      left:12px;
-      right:12px;
-      bottom:16px;
-      z-index:80;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-    }
-    .sticky-cta .btn-cta{width:100%;padding:12px 16px;border-radius:12px;font-weight:800}
-    @media (max-width:640px){
-      .sticky-cta{display:flex}
-    }
-
     .muted-2{color:#475569}
-    .small{font-size:13px}
+    .small{font-size:14px}
     .center{text-align:center}
+    .gap-sm{height:12px}
   </style>
 </head>
 <body>
@@ -241,6 +208,7 @@
         <a href="#speakers">Speakers</a>
         <a href="#schedule">Schedule</a>
         <a href="#donate">Donate</a>
+        <!-- GET TICKETS -->
         <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Get Tickets</a>
       </nav>
     </div>
@@ -255,7 +223,7 @@
           <h1 id="hero-title">THE HUDDLE FROM THE MOUNTAINTOP</h1>
           <p class="lead">Reflecting the Past. Inspecting the Present. Projecting the Future. Join visionaries, influencers, and students for a day of learning, certification, and investment in the creative economy.</p>
 
-          <div class="meta" aria-hidden="false">
+          <div class="meta">
             <div class="pill">Sat, Jan 17, 2026 • 12:00 PM — 3:00 PM CST</div>
             <div class="pill">Southwest Magnet High School — Little Rock, AR</div>
             <div class="pill">Hosted by Faith First Responders United & TCAA NIL League</div>
@@ -274,7 +242,7 @@
           <h3>Ways to participate</h3>
           <p class="muted">Choose the path that fits you — in-person attendance links to the event site.</p>
 
-          <div style="display:grid;gap:10px;margin-top:10px">
+          <div style="display:grid;gap:10px;margin-top:12px">
             <div style="display:flex;justify-content:space-between;align-items:center">
               <div>
                 <div style="font-weight:800">Attend In-Person</div>
@@ -312,19 +280,19 @@
     </div>
   </header>
 
-  <!-- MOBILE compact registration card -->
-  <div class="mobile-reg" aria-hidden="false">
+  <!-- MOBILE compact registration card (appears only on small screens) -->
+  <div class="mobile-reg">
     <div class="card">
       <h3 style="margin-top:0">Ways to participate</h3>
-      <p class="muted small">Quick actions — opens event site in a new tab.</p>
+      <p class="muted small">Quick actions — the site opens in a new tab.</p>
 
-      <div style="display:grid;gap:8px;margin-top:8px">
+      <div style="display:grid;gap:10px;margin-top:10px">
         <div style="display:flex;justify-content:space-between;align-items:center">
           <div>
             <div style="font-weight:800;font-size:14px">Attend In-Person</div>
             <div class="small muted">Southwest Magnet High School</div>
           </div>
-          <a class="btn btn-cta" style="font-size:14px;padding:9px 12px" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Tickets</a>
+          <a class="btn btn-cta" style="font-size:14px;padding:8px 12px" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Tickets</a>
         </div>
 
         <div style="display:flex;justify-content:space-between;align-items:center">
@@ -358,18 +326,18 @@
   <main>
     <section id="about" class="section">
       <div class="wrap">
-        <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
-          <div style="flex:1;min-width:220px">
+        <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap">
+          <div style="flex:1;min-width:280px">
             <h2 class="section-title">About MLK40</h2>
             <p class="muted">Forty years later we gather to honor Dr. King's vision and advance the next 40 years of leadership and opportunity. MLK40 unites visionaries, influencers, and students for a day of learning, certification, and investment in the creative economy. The initiative also supports a $1,000,000 infusion to fund scholarships, NIL programs, coursework, and institutional projects.</p>
-            <div style="height:10px"></div>
+            <div style="height:12px"></div>
             <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Register / Learn More</a>
           </div>
 
-          <div style="width:360px;min-width:200px;max-width:100%">
+          <div style="width:420px">
             <div class="card">
               <h3 style="margin-top:0">Event Highlights</h3>
-              <ul style="padding-left:16px;margin:8px 0 0;color:var(--muted);font-size:14px">
+              <ul style="padding-left:18px;margin:10px 0 0;color:var(--muted)">
                 <li>MLK40 Mini-course Certification (3 modules)</li>
                 <li>Community leaders, students, and influencers</li>
                 <li>Scholarships, NIL learning & creative-economy initiatives</li>
@@ -381,46 +349,32 @@
       </div>
     </section>
 
-    <!-- ORIGINAL PRODUCERS (kept on page but not in top-nav) -->
-    <section id="original-producers" class="section" aria-labelledby="original-producers-title">
-      <div class="wrap">
-        <h3 id="original-producers-title" class="section-title">Original Producers of 1st 40 Years of MLK Holiday Head to Arkansas to Start Next 40 years</h3>
-        <p class="muted">A look at the original producers and leaders who made the first 40 years of the MLK Holiday possible — now coming to Arkansas to begin the next chapter.</p>
-
-        <div class="news-hero" aria-hidden="false">
-          <img src="https://pbs.twimg.com/media/G-Ul5VnXgAAmWUE.jpg" alt="Original producers head to Arkansas — MLK40" />
-        </div>
-
-        <p class="muted">Read more on the event site via the "Get Tickets" button.</p>
-      </div>
-    </section>
-
-    <!-- PROGRAM -->
+    <!-- PROGRAM / MODULES -->
     <section id="program" class="section" aria-labelledby="program-title">
       <div class="wrap">
         <h3 id="program-title" class="section-title">Program — 3-module Mini-Course</h3>
         <p class="muted">Attendees receive the MLK40 mini-course certification through three focused modules.</p>
 
-        <div style="height:12px"></div>
+        <div style="height:18px"></div>
         <div class="cards" role="list">
           <article class="module" role="listitem">
             <h4>1. The Making of the MLK Holiday (1968—1986)</h4>
             <p class="muted">Historical context and the movement that turned a moment into a national holiday — the politics, advocacy, and leaders who made it happen.</p>
-            <div style="height:10px"></div>
+            <div style="height:12px"></div>
             <a class="small btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Learn More</a>
           </article>
 
           <article class="module" role="listitem">
             <h4>2. The Black Tax: The Cost of Being Black in America</h4>
             <p class="muted">A frank look at economic, social, and institutional costs — and strategies for optimizing individual and community value.</p>
-            <div style="height:10px"></div>
+            <div style="height:12px"></div>
             <a class="small btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Learn More</a>
           </article>
 
           <article class="module" role="listitem">
             <h4>3. Our Move Now: Careers, Wealth, Institutions & Programs</h4>
             <p class="muted">Practical paths: careers, wealth creation, building institutions and programs that last for future generations.</p>
-            <div style="height:10px"></div>
+            <div style="height:12px"></div>
             <a class="small btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Learn More</a>
           </article>
         </div>
@@ -433,8 +387,9 @@
         <h3 class="section-title">Featured Speakers & Leaders</h3>
         <p class="muted">A lineup of visionaries, community leaders, and influencers. (Full roster available on the event site.)</p>
 
-        <div style="height:12px"></div>
+        <div style="height:18px"></div>
         <div class="speakers-grid" role="list">
+          <!-- Shawn D. Rochester headshot -->
           <div class="card speaker" role="listitem" aria-label="Shawn D. Rochester">
             <div class="avatar" style="background-image:url('https://aalbc.com/author-photos/shawn_d_rochester.jpg')" aria-hidden="true"></div>
             <div>
@@ -443,8 +398,9 @@
             </div>
           </div>
 
+          <!-- Banner thumbnail (centered & using contain to avoid off-center PNG issues) -->
           <div class="card speaker" role="listitem" aria-label="Event banner">
-            <div class="banner-avatar" style="background-image:url('https://pbs.twimg.com/media/G-Ul5VnXgAAmWUE.jpg')" aria-hidden="true"></div>
+            <div class="banner-avatar" style="background-image:url('https://cdn.filestackcontent.com/resize=width:1600/output=format:png/rcwCxXmsTqWz9bCBAuJ3')" aria-hidden="true"></div>
             <div>
               <h5>Event Banner</h5>
               <p class="muted">MLK Holiday Weekend — The Huddle from the Mountaintop.</p>
@@ -464,12 +420,12 @@
 
     <!-- SCHEDULE -->
     <section id="schedule" class="section">
-      <div class="wrap" style="display:flex;gap:16px;flex-wrap:wrap">
-        <div style="flex:1;min-width:240px">
+      <div class="wrap" style="display:flex;gap:24px;flex-wrap:wrap">
+        <div style="flex:1;min-width:300px">
           <h3 class="section-title">Event Schedule (Day-of)</h3>
           <p class="muted">Event runs 12:00–3:00 PM CST. Detailed session times and breakout schedule are available via the event site.</p>
 
-          <div style="height:10px"></div>
+          <div style="height:12px"></div>
           <div class="schedule-box">
             <strong>12:00 PM</strong> — Doors open / check-in<br/>
             <strong>12:30 PM</strong> — Opening remarks & keynote<br/>
@@ -478,29 +434,29 @@
           </div>
         </div>
 
-        <div style="width:320px;min-width:200px;max-width:100%">
+        <div style="width:360px">
           <div class="card">
             <h4 style="margin-top:0">Registration Notes</h4>
             <p class="muted">Tickets, VIPs, ambassador passes, and student scholarship sponsorships are managed through the event portal. Use the "Get Tickets" button in the header or the links below.</p>
-            <div style="height:10px"></div>
+            <div style="height:12px"></div>
             <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Event Site</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DONATE -->
+    <!-- DONATE / FUNDRAISING -->
     <section id="donate" class="section">
       <div class="wrap">
-        <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
-          <div style="flex:1;min-width:220px">
+        <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+          <div style="flex:1;min-width:260px">
             <h3 class="section-title">Support Scholarships & the $1,000,000 Initiative</h3>
             <p class="muted">Help fund student scholarships, NIL programs, coursework, and institutional investments. Contributions are collected through the event donation/ticketing portal.</p>
-            <div style="height:10px"></div>
+            <div style="height:12px"></div>
             <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Donate / Sponsor a Student</a>
           </div>
 
-          <div style="width:320px;min-width:200px;max-width:100%">
+          <div style="width:420px">
             <div class="card">
               <h4 style="margin-top:0">Why give?</h4>
               <p class="muted">Donations unlock scholarship seats for students, support NIL learning, and seed programs that expand opportunity across the community.</p>
@@ -510,9 +466,9 @@
       </div>
     </section>
 
-    <!-- FAQ + CONTACT fixed: use contact-grid class -->
+    <!-- FAQ + CONTACT -->
     <section id="contact" class="section">
-      <div class="wrap contact-grid">
+      <div class="wrap" style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start">
         <div>
           <h3 class="section-title">FAQ</h3>
           <dl class="faq">
@@ -537,7 +493,7 @@
           <div style="height:8px"></div>
           <p style="margin:8px 0"><strong>Email:</strong> <a href="mailto:thecollege@aol.com">thecollege@aol.com</a></p>
           <p style="margin:8px 0"><strong>Event site:</strong><br/>
-          <a href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Humanitix event page</a></p>
+          <a href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now</a></p>
 
           <div style="height:12px"></div>
           <a class="btn btn-ghost" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Contact Host / View Tickets</a>
@@ -547,14 +503,9 @@
 
   </main>
 
-  <!-- sticky mobile CTA -->
-  <div class="sticky-cta">
-    <a class="btn btn-cta" href="https://events.humanitix.com/2026-mlk-king-holiday-at-40-the-huddle-from-the-mountaintop-visionaries-influencers-we-got-now" target="_blank" rel="noopener noreferrer">Get Tickets</a>
-  </div>
-
   <!-- FOOTER -->
   <footer>
-    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px">
       <div>
         <div style="font-weight:800">MLK40 — THE HUDDLE</div>
         <div class="small muted">Hosted by Faith First Responders United & TCAA NIL League</div>
@@ -562,8 +513,8 @@
 
       <div class="sponsors">
         <div class="small muted">Sponsors & Partners:</div>
-        <img src="sponsor1.png" alt="Sponsor 1" style="height:24px;opacity:0.9">
-        <img src="sponsor2.png" alt="Sponsor 2" style="height:24px;opacity:0.9">
+        <img src="sponsor1.png" alt="Sponsor 1" style="height:26px;opacity:0.9">
+        <img src="sponsor2.png" alt="Sponsor 2" style="height:26px;opacity:0.9">
       </div>
 
       <div class="small muted">© <span id="year"></span> MLK40 • All rights reserved</div>
@@ -571,11 +522,8 @@
   </footer>
 
   <script>
-    // small accessibility helpers
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    // keyboard focus helper
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // keyboard focus helper points to humanitix event link
     document.addEventListener('keydown', (e) => {
       if(e.key === 't' || e.key === 'T') {
         const ticket = document.querySelector('a[href*="humanitix.com"]');
