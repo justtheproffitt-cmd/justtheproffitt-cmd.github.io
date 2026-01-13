@@ -234,6 +234,20 @@
     .small{font-size:13px}
     .center{text-align:center}
     .hidden{display:none}
+    .donate-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .cashapp-image{
+      margin-top:12px;
+      border:1px solid rgba(15,23,36,0.06);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+      max-width:520px;
+    }
+    .cashapp-image img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
   </style>
 </head>
 <body>
@@ -508,8 +522,13 @@
             <h3 class="section-title">Support Scholarships & the $1,000,000 Initiative</h3>
             <p class="muted">Help fund student scholarships, NIL programs, coursework, and institutional investments. Contributions are collected through the event donation/ticketing portal.</p>
             <div style="height:10px"></div>
-            <a class="btn btn-cta" data-donate-toggle href="#donate">Donate / Sponsor a Student</a>
-            <a class="btn btn-ghost" href="https://cash.app/$TCAAthecollege" target="_blank" rel="noopener noreferrer">Donate via Cash App</a>
+            <div class="donate-actions">
+              <a class="btn btn-cta" data-donate-toggle href="#donate">Donate / Sponsor a Student</a>
+              <a class="btn btn-ghost" href="https://cash.app/$TCAAthecollege" target="_blank" rel="noopener noreferrer">Donate via Cash App</a>
+            </div>
+            <div class="cashapp-image" aria-label="Cash App info image">
+              <img src="TCAA_CashApp_Info.png" alt="Cash App donation info" />
+            </div>
           </div>
 
           <div style="width:320px;min-width:200px;max-width:100%">
