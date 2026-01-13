@@ -142,14 +142,6 @@
     /* NEWS image */
     .news-hero{width:100%;max-width:520px;overflow:hidden;border-radius:10px;margin:0 auto 12px}
     .news-hero img{width:100%;height:auto;display:block;clip-path: inset(12px 0 0 0)}
-    .event-banner-img{
-      width:100%;
-      height:180px;
-      border-radius:10px;
-      background-size:cover;
-      background-position:center;
-      margin-bottom:10px;
-    }
     .speaker.event-banner{display:block}
 
     /* GRID / content */
@@ -162,7 +154,7 @@
 
     .speakers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .speaker{display:flex;gap:12px;align-items:center}
-    .speaker .avatar{width:72px;height:72px;border-radius:10px;flex-shrink:0;background:#eee;background-size:cover;background-position:center}
+    .speaker .avatar{width:96px;height:96px;border-radius:12px;flex-shrink:0;background:#eee;background-size:cover;background-position:center}
     .speaker h5{margin:0;font-size:15px}
     .speaker p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
@@ -461,8 +453,8 @@
           </div>
 
           <div class="card speaker event-banner" role="listitem" aria-label="Event banner">
-            <div style="width:100%">
-              <div class="event-banner-img" style="background-image:url('https://pbs.twimg.com/media/G-Ul5VnXgAAmWUE.jpg')" aria-hidden="true"></div>
+            <div class="avatar" style="background-image:url('https://pbs.twimg.com/media/G-Ul5VnXgAAmWUE.jpg')" aria-hidden="true"></div>
+            <div>
               <h5>Event Banner — Original Producers Head to Arkansas</h5>
               <p class="muted">Original producers of the first 40 years of the MLK Holiday are headed to Arkansas to begin the next 40 years.</p>
               <p class="muted" style="margin-bottom:0">Read more on the event site via the "Get Tickets" button.</p>
@@ -470,7 +462,7 @@
           </div>
 
           <div class="card speaker" role="listitem">
-            <div class="avatar" style="background-image:url('speaker-placeholder.jpg')" aria-hidden="true"></div>
+            <div class="avatar" style="background-image:url('https://cdn.filestackcontent.com/ZeNrcDrVRB28UZdvxUWL')" aria-hidden="true"></div>
             <div>
               <h5>More Speakers TBA — The Huddle: <strong>WE GOT NOW</strong> National Tour</h5>
               <p class="muted">Full speaker roster and bios are posted on the event site.</p>
